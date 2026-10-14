@@ -42,4 +42,6 @@ Use StudioNet only. Check FINALIZED **and execution SUCCESS**, then compare Expl
 
 The optional sanitized Node scripts require `npm ci`, an installed GenLayer CLI entrypoint supplied through `REDUCER_CLI_PATH`, and an already-unlocked encrypted dedicated test account selected through `REDUCER_TEST_ACCOUNT`. They never export signing keys, expose raw validator configuration, or blindly repeat an uncertain broadcast.
 
+`scripts/create-test-wallet.cjs` optionally creates a fresh random test signer with an encrypted keystore outside Git and a separately DPAPI-encrypted recovery password on Windows. It does not change the globally active account. `run-cli.cjs` can recover the password for this specifically named test-wallet format and supply it privately to the CLI prompt. Recovery requires the same Windows identity; do not fund these wallets. Never commit keystores or recovery files.
+
 See [architecture](docs/architecture.md), [proof matrix](docs/proof-matrix.md) and [security model](SECURITY.md). Semantic preservation is not a formal proof and novelty/reviewer acceptance is not guaranteed.
