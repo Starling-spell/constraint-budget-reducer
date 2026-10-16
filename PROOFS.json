@@ -1,0 +1,169 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "address": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+  "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+  "transactions": [
+    {
+      "step": "deploy",
+      "hash": "0x4026476c6a9722cb3855e9474f89720ae1e282669bc7b1c3cfcc363e296e8296",
+      "verified": true,
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE"
+    },
+    {
+      "step": "register",
+      "verified": true,
+      "hash": "0xc0ec540560c6b7a5e12e4c0926b2f8ba063c9806cb1bd53b93d08be70eecd52f",
+      "address": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE"
+    },
+    {
+      "step": "generated",
+      "verified": true,
+      "hash": "0xccc31f068b408895e2597b5160d086f01c074c6abf91b1d383d06483394f82e0",
+      "address": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE"
+    },
+    {
+      "step": "dropped",
+      "verified": true,
+      "hash": "0x082b2c7ae7da990ba6e374af832419ccbf1abe1a168e25f491c06d016c77f824",
+      "address": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE"
+    },
+    {
+      "step": "invented",
+      "verified": true,
+      "hash": "0xbf841e211a32dd179824dc84d1302005dc123d2418649bad2ef0526d4a9d08d1",
+      "address": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE"
+    },
+    {
+      "step": "replay",
+      "verified": true,
+      "hash": "0x925ebdce6299aa5a3c1baae48bc5de58b42cd69e9b8967eb620ab40acd4f88d4",
+      "address": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "expected_error_matched": true
+    }
+  ],
+  "source": {
+    "address": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+    "match": true,
+    "sha256": "8b97b0652a572e0a204ca2c14df03bb520dfad70e51c737c738e65ad1c12bed9"
+  },
+  "state": {
+    "bundle_key": "bc2bf0bec146ae9c8ee5eb7fd7c9a2ed7eceff1b59bf80abf23098578acb7906",
+    "bundle": {
+      "author": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "clauses": [
+        "The operator must encrypt every backup before storing it and must retain the backups for exactly 30 days.",
+        "The operator must not export personal data, except when the data subject gives explicit written consent.",
+        "The operator must delete temporary logs within 24 hours after the related job finishes."
+      ],
+      "contract": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+      "nonce": "demo-input",
+      "policy": "constraint-budget-reducer-v1",
+      "root": "dd7630da4fc25354f86ce7879ded3f960dafe43fa49e4521b2b2410a393d5bfd"
+    },
+    "results": [
+      {
+        "nonce": "demo-generated",
+        "key": "31950321800d90853696b733e59e7d68e996e8ef404c9e7484b4938041de0808",
+        "bytes": 220,
+        "report": {
+          "audit": {
+            "details_exact": "PASS",
+            "no_additions": "PASS",
+            "preserved": [
+              "PASS",
+              "PASS",
+              "PASS"
+            ]
+          },
+          "binding": {
+            "budget": 230,
+            "bundle": "bc2bf0bec146ae9c8ee5eb7fd7c9a2ed7eceff1b59bf80abf23098578acb7906",
+            "contract": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+            "input_root": "dd7630da4fc25354f86ce7879ded3f960dafe43fa49e4521b2b2410a393d5bfd",
+            "nonce": "demo-generated",
+            "policy": "constraint-budget-reducer-v1",
+            "proposer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42"
+          },
+          "text": "Operator must encrypt every backup before storage, retaining them for 30 days. Personal data export is prohibited except with explicit written consent. Temporary logs must be deleted within 24 hours after job completion."
+        },
+        "root": "7e518eba03928a7bbd1bb99bddbe612c273a42edad70ed39c42b9ba34230a0f7",
+        "status": "COMPACTED"
+      },
+      {
+        "nonce": "demo-dropped",
+        "key": "4192b1dcd6b7c84bc815638fef24249177857bd75bcab38c6ed7d88021deb79c",
+        "bytes": 85,
+        "report": {
+          "audit": {
+            "details_exact": "FAIL",
+            "no_additions": "FAIL",
+            "preserved": [
+              "PASS",
+              "FAIL",
+              "FAIL"
+            ]
+          },
+          "binding": {
+            "budget": 230,
+            "bundle": "bc2bf0bec146ae9c8ee5eb7fd7c9a2ed7eceff1b59bf80abf23098578acb7906",
+            "contract": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+            "input_root": "dd7630da4fc25354f86ce7879ded3f960dafe43fa49e4521b2b2410a393d5bfd",
+            "nonce": "demo-dropped",
+            "policy": "constraint-budget-reducer-v1",
+            "proposer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42"
+          },
+          "text": "The operator must encrypt backups before storage and retain them for exactly 30 days."
+        },
+        "root": "e1b1fd04da73a9514e817471d1fdf72dbb9b03de067a28c943d2ba83ab4fe7f8",
+        "status": "REJECTED"
+      },
+      {
+        "nonce": "demo-invented",
+        "key": "49f3f085c2667436f0703927b1ca5a92707a6feaf89d0ebb83e8f2b70f6b884f",
+        "bytes": 130,
+        "report": {
+          "audit": {
+            "details_exact": "FAIL",
+            "no_additions": "FAIL",
+            "preserved": [
+              "FAIL",
+              "FAIL",
+              "FAIL"
+            ]
+          },
+          "binding": {
+            "budget": 230,
+            "bundle": "bc2bf0bec146ae9c8ee5eb7fd7c9a2ed7eceff1b59bf80abf23098578acb7906",
+            "contract": "0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B",
+            "input_root": "dd7630da4fc25354f86ce7879ded3f960dafe43fa49e4521b2b2410a393d5bfd",
+            "nonce": "demo-invented",
+            "policy": "constraint-budget-reducer-v1",
+            "proposer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42"
+          },
+          "text": "The operator must encrypt backups, retain them 30 days, export all personal data without consent, and keep temporary logs forever."
+        },
+        "root": "4c9f634d93133a7652cacde1e3ce8e8ed26cb17b6efc812ba2b1e8b68b310f49",
+        "status": "REJECTED"
+      }
+    ],
+    "wrong_root_rejected": true
+  }
+}

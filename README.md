@@ -20,6 +20,8 @@ The leader generates compact text. Each validator independently compares that sa
 
 Immutable authenticated input, contract/proposer/nonce domain separation, strict JSON schemas, UTF-8 budgets, input-root-bound consumer reads, and replay rejection. Original constraints are never deleted. Contradictions in the original must remain contradictions; this contract does not make a policy safe or consistent. Semantic consensus is probabilistic and may share model errors. Do not use the output to move funds or authorize high-risk actions without additional review. No external code execution or asset custody.
 
+**Observed live limitation:** the generated demo received an all-PASS audit but replaced the original "data subject gives explicit written consent" with unspecified "explicit written consent". Consensus did not catch that actor-scope omission. COMPACTED is a model-consensus label, not a formal equivalence proof; this deployment should not be presented as established preservation of every consequential detail. See the exact artifact in `PROOFS.json` and `LIVE_PROOFS.md`.
+
 ## Local validation
 
 ```
@@ -32,6 +34,9 @@ Direct tests use mocked generation and audits. They do not prove distributed con
 
 ## Deployment
 
+Verified StudioNet deployment: [0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B](https://explorer-studio.genlayer.com/address/0x3b19ab3a75000590368C5a4EE2D7bD8771B9847B).
+Finalized deployment execution is SUCCESS. Deployed source matches this repository; normalized SHA-256: `8b97b0652a572e0a204ca2c14df03bb520dfad70e51c737c738e65ad1c12bed9`.
+
 ```
 genlayer network set studionet
 genlayer account use YOUR_ENCRYPTED_TEST_ACCOUNT
@@ -39,6 +44,8 @@ genlayer deploy --contract contracts/ConstraintBudgetReducer.py
 ```
 
 Use StudioNet only. Check FINALIZED **and execution SUCCESS**, then compare Explorer source with this file. See LIVE_PROOFS.md for actual deployment status.
+
+`node scripts/complete-proofs.mjs` verifies the recorded deployment and resumes the documented demo using known hashes in `PROOFS.json`. It refuses to rebroadcast a step whose prior broadcast outcome is unknown. Inspect sender history before clearing any unknown entry. The demo writes require the existing unlocked dedicated `studio-proof-deployer` test account; reads require no signer.
 
 The optional sanitized Node scripts require `npm ci`, an installed GenLayer CLI entrypoint supplied through `REDUCER_CLI_PATH`, and an already-unlocked encrypted dedicated test account selected through `REDUCER_TEST_ACCOUNT`. They never export signing keys, expose raw validator configuration, or blindly repeat an uncertain broadcast.
 
